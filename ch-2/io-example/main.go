@@ -46,5 +46,5 @@ func main() {
 	if err != nil {
 		log.Fatalln("Unable to write data")
 	}
-	fmt.Printf("Wrote %d bytes to stdout\n", s)
+	fmt.Printf("Write %d bytes to stdout\n", s)
 }
